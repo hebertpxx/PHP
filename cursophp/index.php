@@ -7,9 +7,9 @@
   <body>
 
     <?php
-    $ano = 1997;
-    $idade = 0;
-    $tempo = $_GET["a"];
+    $ano = $_GET["a"];
+    $idade = $_GET["b"];
+    $tempo = $_GET["c"];
     $nome = "Bryant";
 
     for ($i=0; $i < $tempo; $i++) {
