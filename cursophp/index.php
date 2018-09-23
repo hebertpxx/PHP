@@ -6,11 +6,21 @@
   </head>
   <body>
 
+    <form action="index.php" method="get">
+      <table>
+        <tr><td>Nome:</td><td><input style="width: 100px;" type="text" name="nome" min="1900"></td></tr>
+        <tr><td>Ano:</td><td><input style="width: 100px;" type="number" name="a" min="1900" max="9999"></td></tr>
+        <tr><td>Idade:</td><td><input style="width: 100px;" type="number" name="b" min="0" max="120"></td></tr>
+        <tr><td>Tempo:</td><td><input style="width: 100px;" type="number" name="c" min="0" max="120"></td></tr>
+        <tr><td><input type="submit" value="Enviar"></td></tr>
+      </table>
+    </form>
+
     <?php
+    $nome = $_GET["name"];
     $ano = $_GET["a"];
     $idade = $_GET["b"];
     $tempo = $_GET["c"];
-    $nome = "Bryant";
 
     for ($i=0; $i < $tempo; $i++) {
       if ($idade < 16) {
