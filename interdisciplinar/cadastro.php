@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Novo Usuário</title>
 
@@ -11,12 +12,6 @@
   <link href="css/sb-admin.css" rel="stylesheet">
 
   <script>
-    // Dropdown keep open: para impedir o dropdow de fechar ao clicar dentro dele
-      $('.dropdown.keep-open').on({
-          "shown.bs.dropdown": function() { this.closable = false; },
-          "click":             function() { this.closable = true; },
-          "hide.bs.dropdown":  function() { return this.closable; }
-      });
 
       function enviarCadastro() {
         if (document.getElementById('confirmPassword').value == document.getElementById('inputPassword').value) {
