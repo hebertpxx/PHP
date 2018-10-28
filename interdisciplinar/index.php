@@ -9,7 +9,8 @@
 
   <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
 
-  <link href="css/landing-page.min.css" rel="stylesheet">
+  <link href="css/landing-page.css" rel="stylesheet">
+  <link href="css/sb-admin.min.css" rel="stylesheet">
 
   <script>
     // Dropdown keep open: para impedir o dropdow de fechar ao clicar dentro dele
@@ -33,7 +34,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
         </li>
       </ul>
       <div class="dropdown keep-open">
@@ -41,23 +42,25 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <button type="button" class="btn btn-success my-2 my-sm-0">Login</button>
+                <button type="button" class="btn btn-block btn-success">Login</button>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loginDropdown">
 
-                <div class="form-group col-md-4 mb-3">
-                  <label for="userLogin">E-mail</label>
-                  <input type="email" class="form-control is-invalid" id="userLogin" placeholder="email@example.com" required name="usuario">
+              <div class="container">
+                <div class="form-group mb-3">
+                  <div class="form-label-group was-validated">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus="autofocus">
+                    <label for="inputEmail">Endereço de e-mail</label>
+                  </div>
                 </div>
-
-                <div class="form-group col-md-4 mb-3">
-                  <label for="passwordLogin">Senha</label>
-                  <input type="password" class="form-control is-invalid" id="passwordLogin" placeholder="Password" required name="senha">
+                <div class="form-group mb-3">
+                  <div class="form-label-group was-validated">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                    <label for="inputPassword">Senha</label>
+                  </div>
                 </div>
-
-                <div class="col-md-4 mb-2">
-                  <button class="btn btn-primary" type="submit">Entrar</button>
-                </div>
+                <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+              </div>
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="cadastro.php">Novo por aqui? Cadastre-se</a>
@@ -75,16 +78,16 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
+          <h1 class="mb-5">Divulgue seus produtos e faça parceria com diversas empresas!</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form action="cadastro.php" method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                <input type="text" class="form-control form-control-lg" name="email" placeholder="Insira seu e-mail...">
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Cadastre-se!</button>
               </div>
             </div>
           </form>
@@ -195,13 +198,13 @@
           <h2 class="mb-4">Ready to get started? Sign up now!</h2>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form action="cadastro.php" method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                <input type="email" class="form-control form-control-lg" name="email" placeholder="Insira seu e-mail...">
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Cadastre-se!</button>
               </div>
             </div>
           </form>
