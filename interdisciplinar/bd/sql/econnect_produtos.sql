@@ -23,6 +23,14 @@ create table `produtos` (
     unique (sku),
     primary key (produto_id),
     foreign key (imagens_id) references imagens(imagens_id),
-    foreign key (fabricante_id) references fabricante(fabricante_id),
-    foreign key (categoria_id) references categoria(categoria_id)
+    foreign key (fabricante_id) references empresas(empresa_id),
+    foreign key (categoria_id) references categorias(categoria_id)
+) default charset = utf8;
+
+create table categorias (
+	`categoria_id` int auto_increment,
+    `nome_categoria` varchar(64),
+    `categoria_pai` int,
+    primary key (categoria_id),
+    foreign key (categoria_pai) references categorias(categoria_id)
 ) default charset = utf8;
