@@ -34,3 +34,11 @@ create table categorias (
     primary key (categoria_id),
     foreign key (categoria_pai) references categorias(categoria_id)
 ) default charset = utf8;
+
+create table imagens (
+	imagens_id int auto_increment,
+    imagem_um varchar(256),
+    imagem_dois varchar(256),
+    imagem_tres varchar(256),
+    primary key (imagens_id)
+) default charset = utf8;
