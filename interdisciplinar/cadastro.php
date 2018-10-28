@@ -33,6 +33,10 @@
 
     </script>
 
+    <?php
+    $mail = isset($_POST['email'])?$_POST['email']:"";
+    ?>
+
 </head>
 
 <body class="bg-dark">
@@ -46,7 +50,7 @@
             <div class="form-row">
               <div class="col-md-12">
                 <div class="form-label-group">
-                  <input type="text" id="firstName" name="nameCadastro" class="form-control" placeholder="Nome da Empresa" required autofocus="autofocus">
+                  <input type="mail" id="firstName" name="nameCadastro" class="form-control" placeholder="Nome da Empresa" required autofocus="autofocus">
                   <label for="firstName">Nome da Empresa</label>
                 </div>
               </div>
@@ -55,7 +59,7 @@
           </div>
           <div class="form-group was-validated">
             <div class="form-label-group">
-              <input type="email" id="inputEmail" name="mailCadastro" class="form-control" placeholder="Endereço de e-mail" required>
+              <input type="email" id="inputEmail" name="mailCadastro" class="form-control" value="<?php echo $mail; ?>" placeholder="Endereço de e-mail" required>
               <label for="inputEmail">Endereço de e-mail</label>
             </div>
           </div>
@@ -94,7 +98,7 @@
 
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="login.html">Página de login</a>
+          <a class="d-block small mt-3" href="login.php">Página de login</a>
           <a class="d-block small" href="forgot-password.html">Esqueceu sua senha?</a>
         </div>
       </div>
