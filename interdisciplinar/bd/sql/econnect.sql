@@ -11,31 +11,30 @@ create table `empresas` (
     `cnpj` varchar(14) not null,
     `email` varchar(64) not null,
     `senha` varchar(64) not null,
-    `endereco` varchar(256),
-    `cidade_id` int,
-    `estado_id` int,
-    `cep_id` int,
+    `endereco_id` int,
     `telefone_id` varchar(11),
     `tipo_empresa_id` tinyint not null,
     unique (cnpj),
     unique (email),
     primary key (id),
-    foreign key (cep_id) references cep(cep_id),
-    foreign key (cidade_id) references cidade(cidade_id),
-    foreign key (estado_id) references estado(estado_id),
+    foreign key (endereco_id) references endereco(endereco_id),
     foreign key (telefone_id) references telefone(telefone_id),
     foreign key (tipo_empresa_id) references tipo_empresa(tipo_empresa_id)
 ) default charset = utf8;
 
 create table endereco (
-	endereco_id int auto_increment
+	`endereco_id` int auto_increment,
+    `logradouro` varchar(256) not null,
+    `numero_endereco` varchar(4) not null,
+    `cep_id` int not null,
+    primary key (endereco_id),
+    foreign key (cep_id) references cep(cep_id)
 ) default charset = utf8;
 
 create table cep (
 	`cep_id` int auto_increment,
-    `cep_numero` varchar(8),
+    `cep_numero` varchar(8) not null,
 	`cidade_id` int not null,
-    `estado_id` int not null,
     primary key (cep_id),
     foreign key (cidade_id) references cidade(cidade_id),
     foreign key (estado_id) references estado(estado_id)
