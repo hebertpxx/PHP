@@ -5,7 +5,7 @@ default collate utf8_general_ci;
 use econnect;
 
 create table `empresas` (
-	`empresa_id` int not null auto_increment,
+	`empresa_id` int auto_increment,
     `razao_social` varchar(64),
     `nome_fantasia` varchar(64) not null,
     `cnpj` varchar(14) not null,
@@ -27,8 +27,13 @@ create table `empresas` (
     foreign key (tipo_empresa_id) references tipo_empresa(tipo_empresa_id)
 ) default charset = utf8;
 
+create table endereco (
+	endereco_id int auto_increment
+) default charset = utf8;
+
 create table cep (
-	`cep_id` int not null auto_increment,
+	`cep_id` int auto_increment,
+    `cep_numero` varchar(8),
 	`cidade_id` int not null,
     `estado_id` int not null,
     primary key (cep_id),
@@ -37,7 +42,7 @@ create table cep (
 ) default charset = utf8;
 
 create table cidade (
-	`cidade_id` int not null auto_increment,
+	`cidade_id` int auto_increment,
     `cidade_nome` varchar(64) not null,
     `estado_id` int not null,
     primary key (cidade_id),
@@ -45,21 +50,21 @@ create table cidade (
 ) default charset = utf8;
 
 create table estado (
-	`estado_id` int not null auto_increment,
+	`estado_id` int auto_increment,
     `estado_nome` varchar(64) not null,
     `estado_sigla` varchar(2) not null,
     primary key (estado_id)
 ) default charset = utf8;
 
 create table telefone (
-	`telefone_id` int not null auto_increment,
+	`telefone_id` int auto_increment,
     `telefone_um` varchar(11),
     `telefone_dois` varchar(11),
     primary key (telefone_id)
 ) default charset = utf8;
 
 create table tipo_empresa (
-	`tipo_empresa_id` int not null auto_increment,
+	`tipo_empresa_id` int auto_increment,
     `tipo_empresa_nome` varchar(64),
     primary key (tipo_empresa_id)
 ) default charset = utf8;
