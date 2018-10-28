@@ -36,8 +36,7 @@ create table cep (
     `cep_numero` varchar(8) not null,
 	`cidade_id` int not null,
     primary key (cep_id),
-    foreign key (cidade_id) references cidade(cidade_id),
-    foreign key (estado_id) references estado(estado_id)
+    foreign key (cidade_id) references cidade(cidade_id)
 ) default charset = utf8;
 
 create table cidade (
