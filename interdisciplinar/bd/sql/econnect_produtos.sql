@@ -1,31 +1,28 @@
 use econnect;
 
 create table `produtos` (
-	`produto_id` int not null auto_increment,
+	`produto_id` int auto_increment,
     `sku` varchar(16) not null,
-    `nome_produto` varchar(64) not null,
-    `ean` varchar(14) not null,
-    `ncm` varchar(64) not null,
-    `disponibilidade` varchar(64) not null,
-    `garantia` varchar(256),
-    `peso` int,
-    `volumes` int,
-    `estoque` int,
-    `cor` varchar(11),
-    `fabricante` tinyint not null,
-    `categoria`
-    `comprimento`
-    `altura`
-    `largura`
-    `preco`
-    `imagens`
-    `descricao`
-    unique (cnpj),
-    unique (email),
-    primary key (id),
-    foreign key (cep_id) references cep(cep_id),
-    foreign key (cidade_id) references cidade(cidade_id),
-    foreign key (estado_id) references estado(estado_id),
-    foreign key (telefone_id) references telefone(telefone_id),
-    foreign key (tipo_empresa_id) references tipo_empresa(tipo_empresa_id)
+    `nome_produto` varchar(128) not null,
+    `ean` varchar(13),
+    `ncm` varchar(8),
+    `disponibilidade` bit not null,
+    `garantia` tinyint,
+    `peso` float,
+    `volumes` tinyint,
+    `estoque` int not null default 0,
+    `cor` varchar(32),
+    `comprimento` int,
+    `altura` int,
+    `largura` int,
+    `preco` decimal(9,2),
+    `descricao` varchar(512),
+    `imagens_id` int,
+    `fabricante_id` int not null,
+    `categoria_id` int,
+    unique (sku),
+    primary key (produto_id),
+    foreign key (imagens_id) references imagens(imagens_id),
+    foreign key (fabricante_id) references fabricante(fabricante_id),
+    foreign key (categoria_id) references categoria(categoria_id)
 ) default charset = utf8;
