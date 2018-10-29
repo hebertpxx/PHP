@@ -15,7 +15,7 @@ create table `empresas` (
     `tipo_empresa_id` tinyint not null,
     unique (cnpj),
     unique (email),
-    primary key (id),
+    primary key (empresa_id),
     foreign key (endereco_id) references endereco(endereco_id),
     foreign key (tipo_empresa_id) references tipo_empresa(tipo_empresa_id)
 ) default charset = utf8;
