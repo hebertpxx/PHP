@@ -34,7 +34,7 @@ create table `categorias` (
 ) default charset = utf8;
 
 create table `imagens` (
-	`imagens_id` int auto_increment,
+	`imagem_id` int auto_increment,
     `url_imagem` varchar(256),
     `produto_id` int not null,
     primary key (imagem_id),
