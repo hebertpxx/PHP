@@ -17,17 +17,15 @@ create table `produtos` (
     `largura` int,
     `preco` decimal(9,2),
     `descricao` varchar(512),
-    `imagens_id` int,
     `fabricante_id` int not null,
     `categoria_id` int,
     unique (sku),
     primary key (produto_id),
-    foreign key (imagens_id) references imagens(imagens_id),
     foreign key (fabricante_id) references empresas(empresa_id),
     foreign key (categoria_id) references categorias(categoria_id)
 ) default charset = utf8;
 
-create table categorias (
+create table `categorias` (
 	`categoria_id` int auto_increment,
     `nome_categoria` varchar(64),
     `categoria_pai` int,
@@ -35,10 +33,19 @@ create table categorias (
     foreign key (categoria_pai) references categorias(categoria_id)
 ) default charset = utf8;
 
-create table imagens (
-	imagens_id int auto_increment,
-    imagem_um varchar(256),
-    imagem_dois varchar(256),
-    imagem_tres varchar(256),
-    primary key (imagens_id)
+create table `imagens` (
+	`imagens_id` int auto_increment,
+    `url_imagem` varchar(256),
+    `produto_id` int not null,
+    primary key (imagem_id),
+    foreign key (produto_id) references produtos(produto_id)
+) default charset = utf8;
+
+create table `atributos_personalizados` (
+	`atributo_id` int auto_increment,
+    `nome_atibuto` varchar(64) not null,
+    `valor_atributo` varchar(64),
+    `produto_id` int not null,
+    primary key (atributo_id),
+    foreign key (produto_id) references produtos(produto_id)
 ) default charset = utf8;
