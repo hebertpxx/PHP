@@ -15,6 +15,6 @@ create table `itens_pedido` (
 	`qtde_produto` int not null,
 	`pedido_id` int not null,
 	primary key (itens_id),
-	foreign key (produto_id) references produto(produto_id),
+	foreign key (produto_id) references produtos(produto_id),
 	foreign key (pedido_id) references pedido(pedido_id)
 );
