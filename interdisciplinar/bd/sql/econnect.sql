@@ -61,7 +61,7 @@ create table `telefone` (
 ) default charset = utf8;
 
 create table `tipo_empresa` (
-	`tipo_empresa_id` int auto_increment,
+	`tipo_empresa_id` tinyint auto_increment,
     `tipo_empresa_nome` varchar(64) not null,
     primary key (tipo_empresa_id)
 ) default charset = utf8;
