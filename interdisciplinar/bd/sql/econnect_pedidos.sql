@@ -5,6 +5,7 @@ create table `pedido` (
 	`data_pedido` date not null,
     `preco` decimal(9,2) not null,
 	`cliente` int not null,
+    `comentario` varchar(256),
 	primary key (pedido_id),
 	foreign key (cliente) references empresas(empresa_id)
 );
