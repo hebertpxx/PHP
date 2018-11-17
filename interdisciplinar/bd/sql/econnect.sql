@@ -16,8 +16,7 @@ create table `empresas` (
     unique (cnpj),
     unique (email),
     primary key (empresa_id),
-    foreign key (endereco_id) references endereco(endereco_id),
-    foreign key (tipo_empresa_id) references tipo_empresa(tipo_empresa_id)
+    foreign key (endereco_id) references endereco(endereco_id)
 ) default charset = utf8;
 
 create table `endereco` (
