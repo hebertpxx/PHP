@@ -49,3 +49,10 @@ create table `atributos_personalizados` (
     primary key (atributo_id),
     foreign key (produto_id) references produtos(produto_id)
 ) default charset = utf8;
+
+create table `avaliacao_produto` (
+	`produto_id` int not null,
+    `empresa_id` int not null,
+    `avaliacao_produto_valor` decimal(3,1) default 0 not null,
+    constraint avaliacao_produto_id primary key (produto_id, empresa_id)
+)

@@ -12,7 +12,7 @@ create table `empresas` (
     `email` varchar(64) not null,
     `senha` varchar(64) not null,
     `endereco_id` int,
-    `tipo_empresa_id` tinyint not null,
+    `tipo_empresa` tinyint not null,
     unique (cnpj),
     unique (email),
     primary key (empresa_id),
@@ -58,10 +58,4 @@ create table `telefone` (
     `usuario_telefone` int not null,
     primary key (telefone_id),
     foreign key (usuario_telefone) references empresas(empresa_id)
-) default charset = utf8;
-
-create table `tipo_empresa` (
-	`tipo_empresa_id` tinyint auto_increment,
-    `tipo_empresa_nome` varchar(64) not null,
-    primary key (tipo_empresa_id)
 ) default charset = utf8;
