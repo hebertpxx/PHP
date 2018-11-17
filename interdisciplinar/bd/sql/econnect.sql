@@ -63,6 +63,7 @@ create table `telefone` (
 create table `avaliacao_empresa` (
 	`empresa_fornecedor` int not null,
     `empresa_cliente` int not null,
+    `avaliacao_empresa_valor` decimal(3,1) default 0 not null,
     foreign key (empresa_fornecedor) references empresas(empresa_id),
     foreign key (empresa_cliente) references empresas(empresa_id),
     constraint `avaliacao_empresa_id` primary key (empresa_fornecedor, empresa_cliente)
