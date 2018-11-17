@@ -59,3 +59,12 @@ create table `telefone` (
     primary key (telefone_id),
     foreign key (usuario_telefone) references empresas(empresa_id)
 ) default charset = utf8;
+
+-- Avaliação para a empresa cliente (compradora)
+create table `avaliacao_empresa` (
+	`empresa_fornecedor` int not null,
+    `empresa_cliente` int not null,
+    foreign key (empresa_fornecedor) references empresas(empresa_id),
+    foreign key (empresa_cliente) references empresas(empresa_id),
+    constraint `avaliacao_empresa_id` primary key (empresa_fornecedor, empresa_cliente)
+) default charset = utf8;

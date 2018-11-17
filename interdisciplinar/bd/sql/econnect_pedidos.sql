@@ -8,7 +8,7 @@ create table `pedido` (
     `comentario` varchar(256),
 	primary key (pedido_id),
 	foreign key (cliente) references empresas(empresa_id)
-);
+) default charset = utf8;
 
 create table `itens_pedido` (
 	`itens_id` int auto_increment,
@@ -18,4 +18,4 @@ create table `itens_pedido` (
 	primary key (itens_id),
 	foreign key (produto_id) references produtos(produto_id),
 	foreign key (pedido_id) references pedido(pedido_id)
-);
+) default charset = utf8;
